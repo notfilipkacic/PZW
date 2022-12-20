@@ -38,7 +38,7 @@ class Donator(models.Model):
     ime = models.CharField(max_length=64)
     prezime = models.CharField(max_length=64)
 
-    # krvna_grupa = models.ForeignKey(KrvnaGrupa, on_delete=models.CASCADE)
+    krvna_grupa = models.ForeignKey(KrvnaGrupa, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.ime + self.prezime
@@ -47,7 +47,7 @@ class Primatelj(models.Model):
     ime = models.CharField(max_length=64)
     prezime = models.CharField(max_length=64)
 
-    # krvna_grupa = models.ForeignKey(KrvnaGrupa, on_delete=models.CASCADE)
+    krvna_grupa = models.ForeignKey(KrvnaGrupa, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.ime + ' ' + self.prezime
@@ -55,7 +55,7 @@ class Primatelj(models.Model):
 class Donacija(models.Model):
     vrijeme_transakcije = models.DateTimeField(default=timezone.now)
 
-    # donator = models.ForeignKey(Donator, on_delete=models.CASCADE)
+    donator = models.ForeignKey(Donator, on_delete=models.CASCADE, default=None)
 
     litraza = models.FloatField(default=0.5)
 
@@ -64,7 +64,7 @@ class Donacija(models.Model):
 
 class Primanje(models.Model):
 
-    # donator = models.ForeignKey(Primatelj, on_delete=models.CASCADE)
+    primatelj = models.ForeignKey(Primatelj, on_delete=models.CASCADE, default=None)
 
     litraza = models.FloatField(default=0.5)
 
