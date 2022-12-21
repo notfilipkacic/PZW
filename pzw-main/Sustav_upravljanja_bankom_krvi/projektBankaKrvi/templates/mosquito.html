@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <h1>IZBORNIK</h1>
+    
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <!-- <li><a href="/homepage">Homepage</a></li> -->
+            <li><a href="/donacija">Donacije</a></li>
+            <li><a href="/donacijskakartica">Donacijske kartice</a></li>
+            <li><a href="/donator">Donatori</a></li>
+            <li><a href="/krvnagrupa">ABO krvne grupe</a></li>
+            <li><a href="/primatelj">Primatelji</a></li>
+            <li><a href="/spremnikkrvi">Spremnici krvi</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
