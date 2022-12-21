@@ -1,0 +1,14 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> AB0 KRVNE GRUPE </h2>
+<br>
+
+<ul>
+    {% for krvnagrupa in krvnagrupa_list %}
+        <li>{{ krvnagrupa.kg }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
