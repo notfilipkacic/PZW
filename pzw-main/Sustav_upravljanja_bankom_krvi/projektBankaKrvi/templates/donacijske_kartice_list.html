@@ -5,4 +5,15 @@
 <h2> LISTA DONACIJSKIH KARTICA </h2>
 <br>
 
+    {% if donacijske_kartice_list %}
+    <ul> 
+        {% for donacijske_kartice in donacijske_kartice_list %}
+            <p> Ime donatora: {{ donacijske_kartice.donator }} </p>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nema donacijskih kartica na listi.</p>
+  {% endif %}
+
 {% endblock %}
