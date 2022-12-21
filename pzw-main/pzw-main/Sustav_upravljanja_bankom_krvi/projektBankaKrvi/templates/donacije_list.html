@@ -1,0 +1,19 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+    <h2> LISTA DONACIJA </h2>
+    <br>
+    {% if donacije_list %}
+    <ul> 
+        {% for donacije in donacije_list %}
+            <p> Vrijeme donacije: {{ donacije.vrijeme_donacije }} </p>
+            <p> Ime donatora: {{ donacije.donator }} </p>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nema donacija na listi.</p>
+    {% endif %}
+
+{% endblock %}
