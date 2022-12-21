@@ -1,0 +1,14 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> LISTA DONATORA </h2>
+<br>
+
+<ul>
+    {% for donator in donacije_list %}
+        <h1> {{ donator.ime }} </h1>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -45,7 +45,6 @@ class SpremnikKrviFactory(DjangoModelFactory):
         model = SpremnikKrvi
     krvna_grupa = factory.SubFactory(KrvnaGrupa) # m2m field factory ??
 
-
 class DonatorFactory(DjangoModelFactory):
     class Meta:
         model = Donator
