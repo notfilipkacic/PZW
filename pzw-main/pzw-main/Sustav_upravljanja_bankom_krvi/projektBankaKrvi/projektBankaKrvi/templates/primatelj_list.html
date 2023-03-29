@@ -1,0 +1,21 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> LISTA PRIMATELJA </h2>
+<br>
+
+{% if primatelj_list %}
+    <ul> 
+        {% for primatelj in primatelj_list %}
+            <p> Ime: {{ primatelj.ime }} </p>
+            <p> Prezime: {{ primatelj.prezime }} </p>
+            <p> Krvna grupa: {{ primatelj.krvna_grupa }} </p>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nema primatelja na listi.</p>
+{% endif %}
+
+{% endblock %}

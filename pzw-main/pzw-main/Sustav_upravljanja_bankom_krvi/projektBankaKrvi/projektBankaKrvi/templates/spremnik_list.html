@@ -1,0 +1,18 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> LISTA SPREMNIKA KRVI </h2>
+<br>
+
+{% if primatelj_list %}
+    <ul>
+        {% for spremnik in spremnik_list %}
+            <li>{{ spremnik.krvna_grupa }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nema krvnih spremnika na listi.</p>
+{% endif %}
+
+{% endblock %}

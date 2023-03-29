@@ -1,0 +1,19 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> AB0 KRVNE GRUPE </h2>
+<br>
+
+    <ul>
+        {% for krvnagrupa in krvnagrupa_list %}
+            <p><b>{{ krvnagrupa.kg }}</b></p>
+        {% endfor %}
+    </ul>
+
+<p>
+    <img src="../media/big_pharma.png" alt="slika 1. Farmacija" style="width:60px;height:60px">
+    <!-- pokušali smo stavit sliku, ali ne ide-->
+</p>
+
+{% endblock %}

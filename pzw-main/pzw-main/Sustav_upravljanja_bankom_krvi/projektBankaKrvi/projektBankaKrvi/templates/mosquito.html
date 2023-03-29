@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <!-- <link rel="stylesheet" type="text/css" href="../main/static/style.css"> -->
+    <title>{% block title %}Banka krvi{% endblock %}</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        h1 {
+            color: rgb(231, 15, 15);
+            text-align: center;
+        }
+        h2 {
+            color: rgb(133, 2, 2);
+            text-align: center;
+        }
+        h3 {
+            color: rgb(47, 1, 1);
+            text-align: center;
+        } 
+        li {
+            list-style-type: none;
+            float: left;
+        }
+        li a {
+            color: rgb(46, 46, 46);
+            padding: 16px;
+        }
+        </style>
+</head>
+
+
+<body>
+    {% if user.is_authenticated %}
+    <p>Vaše ime: {{ user.username }}</p>
+    <li><a class="nav-link border border-primary" href="{% url 'logout' %}" style="color: red;">Log Out</a></li>
+    {% else %}
+    <p>Niste prijavljeni.</p>
+    <li><a class="nav-link border border-primary" href="{% url 'login' %}" style="color: red;">Log In</a></li>
+    {% endif %}
+
+    
+    
+    <h1>__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___   BANKA KRVI   __̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___</h1>
+    
+    
+
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <!-- <li><a href="/homepage">Homepage</a></li> -->
+            <li><a href="/donacija">Donacije</a></li>
+            <li><a href="/donacijskakartica">Donacijske kartice</a></li>
+            <li><a href="/donator">Donatori</a></li>
+            <li><a href="/krvnagrupa">ABO krvne grupe</a></li>
+            <li><a href="/primatelj">Primatelji</a></li>
+            <li><a href="/primanje">Primanja</a></li>
+            <li><a href="/spremnikkrvi">Spremnici krvi</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

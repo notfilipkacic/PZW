@@ -1,0 +1,21 @@
+{% extends "mosquito.html" %}
+
+{% block content %}
+<br>
+<h2> LISTA DONATORA </h2>
+<p style="color:red"> --------{---(@ </p>
+<br>
+    {% if donator_list %}
+    <ul> 
+        {% for donator in donator_list %}
+            <p> Ime: {{ donator.ime }} </p>
+            <p> Prezime: {{ donator.prezime }} </p>
+            <p> Krvna grupa: {{ donator.krvna_grupa }} </p>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nema donatora na listi.</p>
+{% endif %}
+
+{% endblock %}

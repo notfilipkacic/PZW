@@ -1,0 +1,11 @@
+<form method="POST" novalidate>
+    {% csrf_token %}
+
+    
+        <p>Greška.</p>
+    
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Register" />
+</form>
